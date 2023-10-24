@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VEGETABLES</title>
+    <style>
+        body {
+            background-color:green;
+color:yellow;
+
+        }
+
+        .product-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .product {
+            margin: 20px;
+            display: inline-block;
+        }
+
+        .product img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .product-description {
+            margin-top: 10px;
+        }
+
+        .add-to-cart-btn {
+            background-color: grey;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-to-cart-btn:hover{
+background-color:red;
+c
+}
+
+        .checkout-btn {
+            background-color:grey;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+        }
+ .checkout-btn:hover{
+background-color:red;
+}
+    </style>
+    <script>
+        var cartCount = 0;
+        function addToCart(productName) {
+            alert(productName + " added to cart!");
+            cartCount++;
+            updateCartCount();
+        }
+
+        function checkout() {
+            window.location.href = "http://localhost/model/model.php";
+        }
+
+        function updateCartCount() {
+            var cartCountElement = document.getElementById("cart-count");
+            cartCountElement.textContent = "Items in Cart: " + cartCount;
+        }
+    </script>
+</head>
+<body>
+    <h1><center>VEGETABLES</center></h1>
+    <div class="product-container">
+
+
+        <div class="product">
+            <img src=".jpg" alt="TOMATOES">
+            <div class="product-description">
+                <p>FARM FRESH TOMATOES</p>
+                <p>Price per Tonn: Rs.10,000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Onions')">Add to Cart</button>
+            </div>
+        </div>
+
+<div class="product">
+            <img src=".jpg" alt="ONIONS">
+            <div class="product-description">
+                <p>FARM FRESH ONIONS</p>
+                <p>Price per Tonn:Rs.50,000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Tomatoes')">Add to Cart</button>
+            </div>
+        </div>
+
+<div class="product">
+            <img src=".jpg" alt="POTATOES">
+            <div class="product-description">
+                <p>FARM FRESH POTATOES</p>
+                <p>Price per Tonn: Rs.50,000</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Potatoes')">Add to Cart</button>
+            </div>
+        </div>
+ <div style="text-align: center; margin-top: 20px;">
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+   
+</body>
+</html>
