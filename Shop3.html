@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mens Fashion</title>
+    <style>
+        body {
+            background-image: url("back.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .product-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .product {
+            margin: 20px;
+            display: inline-block;
+        }
+
+        .product img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .product-description {
+            margin-top: 10px;
+        }
+
+        .add-to-cart-btn {
+            background-color: grey;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-to-cart-btn:hover{
+background-color:red;
+c
+}
+
+        .checkout-btn {
+            background-color:grey;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+        }
+ .checkout-btn:hover{
+background-color:red;
+}
+    </style>
+    <script>
+        var cartCount = 0;
+        function addToCart(productName) {
+            alert(productName + " added to cart!");
+            cartCount++; // Increment the count when a product is added to the cart
+            updateCartCount(); // Update the count displayed at the end of the page
+        }
+
+        function checkout() {
+            window.location.href = "shop4.html";
+        }
+
+        function updateCartCount() {
+            var cartCountElement = document.getElementById("cart-count");
+            cartCountElement.textContent = "Items in Cart: " + cartCount;
+        }
+    </script>
+</head>
+<body>
+    <h1><center>Mens Fashion</center></h1>
+    <div class="product-container">
+
+
+        <div class="product">
+            <img src="shirt1.jpg" alt="Shirt 1">
+            <div class="product-description">
+                <p>Men casual Shirt</p>
+                <p>Price: Rs.499</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Stylish Blue Shirt')">Add to Cart</button>
+            </div>
+        </div>
+
+<div class="product">
+            <img src="shirt2.jpg" alt="Shirt 2">
+            <div class="product-description">
+                <p>Stylish Men printed Shirt</p>
+                <p>Price: Rs.599</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Stylish Blue Shirt')">Add to Cart</button>
+            </div>
+        </div>
+
+<div class="product">
+            <img src="shirt3.jpg" alt="Shirt 3">
+            <div class="product-description">
+                <p>Men Brown Shaded Shirt</p>
+                <p>Price: Rs.349</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Stylish Blue Shirt')">Add to Cart</button>
+            </div>
+        </div>
+
+
+
+<div class="product">
+            <img src="allu2.jpg" alt="Shirt 1">
+            <div class="product-description">
+                <p>Men White printed Shirt </p>
+                <p>Price: Rs.699</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Stylish Blue Shirt')">Add to Cart</button>
+            </div>
+        </div>
+
+<div class="product">
+            <img src="allu3.jpg" alt="Shirt 1">
+            <div class="product-description">
+                <p>Stylish Designer Wear</p>
+                <p>Price:  Rs.599</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Stylish Blue Shirt')">Add to Cart</button>
+            </div>
+          </div>
+
+
+    <div id="cart-count" style="text-align: center; margin-top: 20px;"></div>
+
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+
+
+    <script>
+         updateCartCount();
+    </script>
+</body>
+</html>
