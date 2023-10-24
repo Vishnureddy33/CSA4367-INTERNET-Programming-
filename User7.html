@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER LOGIN PAGE</title>
+    <style>
+body{
+background-color:yellow;
+}
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 60vh; /* 100% of the viewport height */
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><center>APPLYING TOLL PASS</center></h1>
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="username">NAME OF THE APPLICANT:</label>
+            <input type="text" id="username" name="username" required>
+        </div><br>
+<div class="form-group">
+            <label for="userid">DATE OF BIRTH:</label>
+            <input type="date" id="userid" name="userid" >
+        </div><br>
+
+<div class="form-group">
+            <label for="Vehicle">VEHICLE REGISTRATION PAPERS:</label>
+            <input type="file" id="Vehicle" name="Vehicle">
+        </div><br>
+
+<div class="form-group">
+            <label for="Regdate">REGISTRATION DATE:</label>
+            <input type="date" id="Regdate" name="Regdate">
+        </div><br>
+
+
+<div class="form-group">
+            <label for="Vehino">VEHICLE NUMBER:</label>
+            <input type="text" id="Vehino" name="Vehino">
+        </div><br>
+
+<div class="form-group">
+            <label for="password">LICENSE PHOTO:</label>
+            <input type="file" id="password" name="password" required>
+        </div><br>
+
+<div class="form-group">
+            <label for="Number">IDENTIFICATION PROOF:</label>
+            <input type="file" id="Number" name="Number" >
+        </div><br>
+
+<div class="form-group">
+            <label for="otp">EMAIL:</label>
+            <input type="text" id="otp" name="otp" >
+        </div><br>
+
+        <input type="submit" value="APPLY">
+    </form>
+
+    <script>
+        document.getElementById("loginForm").onsubmit = function(event) {
+            event.preventDefault(); // Prevent form submission
+
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+
+            if (username !== "" && password !== "") {
+       alert("Toll pass applied succesfully,Details will be sent through email");
+                window.location.href = "User2.html";
+	
+            } else {
+                
+                alert("Invalid username or password. Please try again.");
+            }
+        };
+    </script>
+</body>
+
+</html>
