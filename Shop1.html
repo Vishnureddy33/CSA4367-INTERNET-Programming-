@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER LOGIN PAGE</title>
+    <style>
+body {
+            font-family: Arial, sans-serif;
+	    
+background-image:url('shop5.jpg');
+backgroung-repeat:no-repeat;
+background-size:cover;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 60vh; /* 100% of the viewport height */
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><center>USER LOGIN</center></h1>
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="username">Enter email:</label>
+            <input type="text" id="username" name="username">
+        </div><br>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        </div><br>
+<input type="submit" value="LOGIN">
+
+
+    </form>
+    <script>
+        document.getElementById("loginForm").onsubmit = function(event) {
+            event.preventDefault(); 
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+
+            if (username === "sairam" && password === "1234") {
+               alert("Login Successful");
+                window.location.href = "shop2.html";
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        };
+    </script>
+</body>
+
+</html>
