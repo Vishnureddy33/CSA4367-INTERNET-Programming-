@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>customer forms</title>
+<style>
+body{
+background-color:green;
+color:yellow;
+
+}
+</style>
+</head>
+<body>
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_POST['name'];
+    $product = $_POST['product'];
+    $quantity = $_POST['quantity'];
+    $location = $_POST['location'];
+    $payment = $_POST['payment'];
+
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $database = "agri";
+  $con = mysqli_connect($servername, $username, $password, $database);
+  if (!$con) {
+      die("Sorry, we failed to connect: " . mysqli_connect_error());
+  } else {
+      echo "Connection was successful";
+  }
+  $sql = "INSERT INTO `agri1` (`name`, `product`, `quantity`, `location`, `payment`) VALUES ('$name', '$product', '$quantity', '$location', '$payment');";
+
+  $result = mysqli_query($con, $sql);
+
+  if ($result) {
+    echo "Data inserted successfully";
+  } else {
+    echo "Data not inserted successfully";
+  }
+}
+?>
+<form action="/model/model.php" method="post">
+<br><br>  
+Customer Name:
+  <input type="text" id="name" name="name" ><br><br>
+Product:
+  <input type="text" id="product" name="product" ><br><br>
+Quantity(in tonns):
+  <input type="text" id="quantity" name="quantity" ><br><br>
+Location:
+  <input type="text" id="location" name="location" ><br><br>
+Payment:
+  <input type="text" id="payment" name="payment" ><br><br>
+
+<input type="submit" value="Insert">
+
+
+</form> 
+</body>
+</html>
