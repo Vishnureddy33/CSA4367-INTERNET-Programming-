@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER LOGIN PAGE</title>
+    <style>
+body{
+background-color:yellow;
+}
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 60vh; /* 100% of the viewport height */
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><center>USER LOGIN</center></h1>
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div><br>
+<div class="form-group">
+            <label for="userid">UserID:</label>
+            <input type="text" id="userid" name="userid" required>
+        </div><br>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div><br>
+
+        <input type="submit" value="LOGIN">
+    </form>
+
+    <script>
+        document.getElementById("loginForm").onsubmit = function(event) {
+            event.preventDefault(); // Prevent form submission
+
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+
+            if (username !== " " && password !== " ") {
+                // Redirect to the welcome page
+                window.location.href = "User2.html";
+            } else {
+                
+                alert("Invalid username or password. Please try again.");
+            }
+        };
+    </script>
+</body>
+
+</html>
