@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN LOGIN PAGE</title>
+    <style>
+body{
+background-color:yellow;
+}
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 60vh; /* 100% of the viewport height */
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><center>ADMIN LOGIN</center></h1>
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div><br>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div><br>
+
+        <input type="submit" value="LOGIN">
+    </form>
+
+    <script>
+        document.getElementById("loginForm").onsubmit = function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get username and password
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check if username and password are correct (you can implement your own validation logic here)
+            if (username !== " " && password !== " ") {
+                // Redirect to the welcome page
+                window.location.href = "Admin1.html";
+            } else {
+                // Display an error message (you can modify this part for a better user experience)
+                alert("Invalid username or password. Please try again.");
+            }
+        };
+    </script>
+</body>
+
+</html>
